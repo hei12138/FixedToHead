@@ -8,6 +8,122 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <!--整个界面分为两行-->
+        <Grid.RowDefinitions>
+            <!--第一行固定大小，用于放置图片和导航栏-->
+            <RowDefinition Height="200"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
 
+        <ScrollViewer x:Name="scroll" ViewChanged="scroll_ViewChanged" Grid.Row="0" Grid.RowSpan="2">
+            <Pivot x:Name="pivot">
+                <Pivot.Title>
+                    <Grid Height="130"/>
+                </Pivot.Title>
+                <PivotItem>
+                    <StackPanel>
+                        <ListView >
+                            <x:Int32>1</x:Int32>
+                            <x:Int32>1</x:Int32>
+                            <x:Int32>1</x:Int32>
+                            <x:Int32>1</x:Int32>
+                            <x:Int32>1</x:Int32>
+                            <x:Int32>1</x:Int32>
+                            <x:Int32>1</x:Int32>
+                            <x:Int32>1</x:Int32>
+                            <x:Int32>1</x:Int32>
+                            <x:Int32>1</x:Int32>
+                            <x:Int32>1</x:Int32>
+                            <x:Int32>1</x:Int32>
+                            <x:Int32>1</x:Int32>
+                            <x:Int32>1</x:Int32>
+                            <x:Int32>1</x:Int32>
+                            <x:Int32>1</x:Int32>
+                            <x:Int32>1</x:Int32>
+                            <x:Int32>1</x:Int32>
+                        </ListView>
+                    </StackPanel>
+                </PivotItem>
+                <PivotItem>
+                    <StackPanel>
+                        <ListView >
+                            <x:Int32>2</x:Int32>
+                            <x:Int32>2</x:Int32>
+                            <x:Int32>2</x:Int32>
+                            <x:Int32>2</x:Int32>
+                            <x:Int32>2</x:Int32>
+                            <x:Int32>2</x:Int32>
+                            <x:Int32>2</x:Int32>
+                            <x:Int32>2</x:Int32>
+                            <x:Int32>2</x:Int32>
+                            <x:Int32>2</x:Int32>
+                            <x:Int32>2</x:Int32>
+                            <x:Int32>2</x:Int32>
+                            <x:Int32>2</x:Int32>
+                            <x:Int32>2</x:Int32>
+                            <x:Int32>2</x:Int32>
+                            <x:Int32>2</x:Int32>
+                            <x:Int32>2</x:Int32>
+                            <x:Int32>2</x:Int32>
+                        </ListView>
+                    </StackPanel>
+                </PivotItem>
+                <PivotItem>
+                    <StackPanel>
+                        <ListView >
+                            <x:Int32>3</x:Int32>
+                            <x:Int32>3</x:Int32>
+                            <x:Int32>3</x:Int32>
+                            <x:Int32>3</x:Int32>
+                            <x:Int32>3</x:Int32>
+                            <x:Int32>3</x:Int32>
+                            <x:Int32>3</x:Int32>
+                            <x:Int32>3</x:Int32>
+                            <x:Int32>3</x:Int32>
+                            <x:Int32>3</x:Int32>
+                            <x:Int32>3</x:Int32>
+                            <x:Int32>3</x:Int32>
+                            <x:Int32>3</x:Int32>
+                            <x:Int32>3</x:Int32>
+                            <x:Int32>3</x:Int32>
+                            <x:Int32>3</x:Int32>
+                            <x:Int32>3</x:Int32>
+                            <x:Int32>3</x:Int32>
+                        </ListView>
+                    </StackPanel>
+                </PivotItem>
+            </Pivot>
+        </ScrollViewer>
+        <!--图片和导航栏-->
+        <Grid x:Name="header" Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="150"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <!--图片-->
+            <Grid Background="Green">
+                
+            </Grid>
+            <!--导航栏 使用listbox绑定到pivot上-->
+            <ListBox Grid.Row="1" x:Name="listBox"
+                     Height="50"
+                             HorizontalAlignment="Stretch"
+                             VerticalAlignment="Bottom"
+                             Background="#FFEAEAEA"
+                             SelectedIndex="{Binding ElementName=pivot,
+                                                     Path=SelectedIndex,
+                                                     Mode=TwoWay}" >
+                <ListBox.Items>
+                    <TextBlock Text="战绩"/>
+                    <TextBlock Text="能力"/>
+                    <TextBlock Text="资产"/>
+                </ListBox.Items>
+                <ListBox.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel Orientation="Horizontal"></StackPanel>
+                    </ItemsPanelTemplate>
+                </ListBox.ItemsPanel>
+            </ListBox>
+        </Grid>
     </Grid>
 </Page>
