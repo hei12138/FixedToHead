@@ -5,5 +5,5 @@
 this project make navagation bar fixed to the head when you swipe to a fixed distance
 
 有问题请联系1329698854@qq.com 
-Please connect to 1329698854@qq.com if you have problems.
-:boy:
+Please connect to 1329698854@qq.com if you have problems.  
+:boy::heart::girl:
